@@ -49,8 +49,8 @@ body {
 
 aside {
     top:5vh;
-    left:10vw;
-    position: absolute;
+    float: left;
+    position: relative;
     width:20vw;
     max-width: 26.66vh;
     height:60vw;
@@ -63,12 +63,12 @@ main {
     color: #1d1d1d;
     padding:3%; 
     padding-left: 13%;
-    position: relative;
+    position: absolute;
     background-color: #fbf678;
-    width:70vw;
+    width:85%;
     height:80vh;
     top:10vh;
-    left:20vw;
+    right: 0;
 }
 
 .drop-shadow {
@@ -130,6 +130,15 @@ h3 {
     text-align: center;
 }
 
+@media screen and (min-width: 1117px) {
+    h1 {
+        font-size: 4.5rem;
+    }
+    h3 {
+        font-size: 1.39rem;
+    }
+}
+
 form {
     margin:1rem 0;
 }
@@ -158,6 +167,7 @@ input:focus {
 }
 
 input::placeholder {
+    padding-top: .17rem;
     color: #1d1d1d;
     opacity: .5;
 }
@@ -174,7 +184,7 @@ input[type="button"]:hover {
 }
 input[type="button"]:active {
     border: 2px solid #1d1d1d;
-    background-color: rgba(0,0,0,.1);
+    background-color: #1d1d1d;
     
 }
 
@@ -186,4 +196,12 @@ input[type="date"]::-webkit-inner-spin-button{
     display: none; /* Hide the button */
     -webkit-appearance: none; /* turn off default browser styling */
     
+}
+
+.centerwrapper {
+    width:80vw;
+    height: 100vh;
+    max-width: 880px;
+    margin: auto;
+    position: relative;
 }
