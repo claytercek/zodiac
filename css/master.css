@@ -137,6 +137,11 @@ h3 {
     h3 {
         font-size: 1.39rem;
     }
+
+    aside {
+        width: 222px;
+        height: 667px;
+    }
 }
 
 form {
@@ -205,18 +210,26 @@ input[type="date"] {
 
 @media screen and (max-width: 700px) {
     body {
-        height:150vh;
+        height: 100%;
     }
     .centerwrapper {
         width:100%;
+        height: calc(80vh + 106vw + 3rem);
+        min-height: calc(500px + 106vw + 3rem);
+        max-height: calc(106vw + 650px + 3rem);
     }
 
     aside {
-        top:80vh;
+        position: absolute;
+        top:initial;
+        bottom:0px !important;
+        
         left: 10vw;
         width:80vw;
-        max-width: 100vw;
+        max-width: none;
         height:106.6666vw;
+        max-height: none;
+        margin-bottom: 3rem;
     }
 
     main {
@@ -224,6 +237,8 @@ input[type="date"] {
         left:5%;
         max-width: 100%;
         padding:3%;
+        max-height: 650px;
+        min-height: 500px;
     }
 
     .icons img {
@@ -250,7 +265,7 @@ input[type="date"] {
     }
     input {
         font-size: 3vw;
-        height:1.5rem;
+        height:2rem;
         width:calc(50% - .25rem);
         margin-left:0;
         margin-bottom:.5rem;
