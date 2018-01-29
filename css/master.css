@@ -76,7 +76,7 @@ main {
 
 .purple {
 	position: fixed;
-	width: 56vw;
+	width: 60vw;
 	height: 100vh;
 	z-index: -2;
 	background-color: #620472;
@@ -109,9 +109,10 @@ main {
 	width: 88%;
 	position: fixed;
 	top: 50%;
-	transform: translateY(-50%);
-	right: 6%;
+	transform: translate(50%, -50%);
+	right: 50%;
 	background-color: #015896;
+	max-width: 1000px;
 }
 
 h1 {
@@ -192,10 +193,10 @@ input[type="button"]:active {
 	border: 2px solid #1d1d1d;
 	background-color: #1d1d1d;
 }
-
+/* 
 input[type="date"] {
 	text-align: -moz-center;
-}
+} */
 .centerwrapper {
 	width: 80vw;
 	height: 100vh;
@@ -219,7 +220,7 @@ input[type="date"] {
 		position: absolute;
 		top: initial;
 		bottom: 0px !important;
-
+		min-height: 0;
 		left: 10vw;
 		width: 80vw;
 		max-width: none;
@@ -269,5 +270,8 @@ input[type="date"] {
 	input:first-child,
 	input:nth-child(3) {
 		margin-right: 0.5rem;
+	}
+	.blue {
+		display: none;
 	}
 }
