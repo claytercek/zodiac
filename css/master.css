@@ -192,10 +192,10 @@ input[type="button"]:active {
 	border: 2px solid #1d1d1d;
 	background-color: #1d1d1d;
 }
-
+/* 
 input[type="date"] {
 	text-align: -moz-center;
-}
+} */
 .centerwrapper {
 	width: 80vw;
 	height: 100vh;
