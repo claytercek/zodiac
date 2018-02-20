@@ -8,8 +8,8 @@ $grey: #1d1d1d;
 
 @font-face {
 	font-family: "Heebo";
-	src: url("fonts/Heebo-Medium.woff2") format("woff2"),
-		url("fonts/Heebo-Medium.woff") format("woff");
+	src: url("../fonts/Heebo-Medium.woff2") format("woff2"),
+		url("../fonts/Heebo-Medium.woff") format("woff");
 	font-weight: 500;
 	font-style: normal;
 }
