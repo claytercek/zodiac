@@ -47,14 +47,14 @@ aside {
 	top: 5vh;
 	float: left;
 	position: relative;
-	width: 20vw;
-	max-width: 26.66vh;
-	height: 60vw;
-	max-height: 80vh;
+	width: 21vw;
+	height: 63vw;
 	background-color: #fe6263;
 	z-index: 2;
-	min-width: 160px;
-	min-height: 480px;
+	min-width: 174px;
+	min-height:522px;
+	max-height: 85vh;
+	max-width: 28.333vh;
 }
 
 main {
@@ -64,10 +64,8 @@ main {
 	position: absolute;
 	background-color: #fbf678;
 	width: 85%;
-	height: 80vh;
 	top: 10vh;
 	right: 0;
-	min-height: 536px;
 }
 
 .drop-shadow {
@@ -76,7 +74,7 @@ main {
 
 .purple {
 	position: fixed;
-	width: 60vw;
+	width: 45vw;
 	height: 100vh;
 	z-index: -2;
 	background-color: #620472;
@@ -102,17 +100,15 @@ main {
 }
 
 .blue {
-	z-index: -1;
+	z-index: -2;
 	float: left;
-	height: 55%;
+	height: 100%;
 	min-height: 400px;
-	width: 88%;
+	width: 100%;
 	position: fixed;
-	top: 50%;
-	transform: translate(50%, -50%);
-	right: 50%;
+	top:0%;
+	left: 25%;
 	background-color: #015896;
-	max-width: 1000px;
 }
 
 h1 {
@@ -123,8 +119,59 @@ h1 {
 	font-size: 6.5vw;
 	text-align: center;
 }
+
+h2 {
+	margin: 0;
+	font-family: Heebo, sans-serif;
+	text-transform: uppercase;
+	font-weight: 900;
+	font-size: 5vw;
+}
+.infoWrapper {
+	position: absolute;
+	width: 100%;
+	top:110%;
+	left: 0;
+	overflow:hidden;
+	animation: 2s slidein ease forwards;
+	max-height: 9vw;
+}
+.artistInfo {
+	width: 72vw;
+	padding: 2.55vw 2.55vw 2.55vw 10.75vw;
+	background-color: #fbf678;
+
+	/* height: fit-content; */
+}
+
+@keyframes slidein {
+	0% {width:0;}
+	50%{max-height: 9vw; width:100%;}
+	100%{max-height:80vh}
+}
+
+
+.artistInfo img {
+	margin-top:.5rem;
+	width:100% ;
+}
+
+.artistInfo p a {
+	color:#1d1d1d;
+
+}
+p {
+	margin: 0;
+	font-family: Heebo, sans-serif;
+	font-weight: 300;
+	font-size: 2vw;
+	margin-top: .5rem;
+}
+
+
 h3 {
 	margin: 0;
+	margin-top: .5rem;
 	font-family: Heebo, sans-serif;
 	text-transform: uppercase;
 	font-weight: 300;
@@ -133,16 +180,36 @@ h3 {
 }
 
 @media screen and (min-width: 1117px) {
+
 	h1 {
 		font-size: 4.5rem;
 	}
 	h3 {
 		font-size: 1.39rem;
 	}
-
+	h2 {
+		font-size: 3.3rem;
+	}
+	p {
+		font-size: 1.31rem;
+	}
 	aside {
-		width: 222px;
-		height: 667px;
+		width: 235px;
+		height: 704px;
+	}
+
+	.artistInfo {
+		width:50.265rem;
+		padding: 1.78rem 1.78rem 1.78rem 7.478rem;
+
+	}
+	.infoWrapper {
+		max-height: 6.28rem;
+	}
+	@keyframes slidein {
+		0% {width:0;}
+		50%{max-height: 6.28rem; width:100%;}
+		100%{max-height:80vh}
 	}
 }
 
@@ -198,22 +265,34 @@ input[type="date"] {
 	text-align: -moz-center;
 } */
 .centerwrapper {
-	width: 80vw;
+	width: 85vw;
 	height: 100vh;
-	max-width: 880px;
+	max-width: 950px;
 	margin: auto;
 	position: relative;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 720px) {
+	@keyframes slidein {
+		0% {width:0;}
+		100%{width:100%;}
+	}
+	.infoWrapper {
+		max-height:unset;
+		animation: 1s slidein ease forwards;
+	}
 	body {
 		height: 100%;
+		padding: 0;
+	}
+	p {
+		font-size: 1rem;
 	}
 	.centerwrapper {
 		width: 100%;
-		height: calc(80vh + 106vw + 3rem);
-		min-height: calc(500px + 106vw + 3rem);
-		max-height: calc(106vw + 650px + 3rem);
+		height: calc(42vh + 150vw + 3rem);
+		min-height: calc(400px + 126vw + 3rem);
+		max-height: calc(120vw + 650px + 3rem);
 	}
 
 	aside {
@@ -221,22 +300,28 @@ input[type="date"] {
 		top: initial;
 		bottom: 0px !important;
 		min-height: 0;
-		left: 10vw;
-		width: 80vw;
+		min-width: 0;
+		margin: 0 auto;
+		right: 10vw;
+		width: 80vw !important;
 		max-width: none;
 		height: 106.6666vw;
 		max-height: none;
 		margin-bottom: 3rem;
 	}
-
+	.artistInfo {
+		padding: 2.7vw;
+		width:87.3vw;
+	}
 	main {
+		top:5vh;
 		width: 90%;
 		left: 5%;
 		max-width: 100%;
 		padding: 3%;
-		max-height: 650px;
-		min-height: 500px;
 	}
+
+
 
 	.icons img {
 		width: 26.5%;
@@ -251,17 +336,20 @@ input[type="date"] {
 	}
 
 	h1 {
-		font-size: 10.1vw;
+		font-size: 9.5vw;
 	}
 
 	h3 {
 		font-size: 3vw;
 	}
+	h2 {
+		font-size:1.5rem;
+	}
 	form {
 		margin-top: 0.5rem;
 	}
 	input {
-		font-size: 3vw;
+		font-size: 1rem;
 		height: 2rem;
 		width: calc(50% - 0.25rem);
 		margin-left: 0;

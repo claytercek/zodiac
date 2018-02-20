@@ -12,7 +12,7 @@
 			artistIconList[i].addEventListener(
 				"click",
 				function() {
-					submit(artistName);
+					selectArtist(artistName);
 				},
 				false
 			);
@@ -21,7 +21,7 @@
 	}
 
 	var audio = new Audio(); //establish audio variable
-	function submit(artistName) {
+	function selectArtist(artistName) {
 		console.log("calling audio for " + artistName);
 		audio.pause(); //incase audio is already playing
 		audio = new Audio("audio/" + artistName + ".mp3");
