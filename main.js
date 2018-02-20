@@ -3,22 +3,18 @@
 
 	for (i = 0; i < 12; i++) {
 		(function() {
-			var artistName = artistIconList[i]
-				.getAttribute("src")
-				.split("/")
-				.pop()
-				.split(".")[0];
-
+			var name = artistIconList[i].getAttribute("alt");
+			var nameNoSpaces = name.replace(/ /g, "");
 			artistIconList[i].addEventListener(
 				"click",
 				function() {
-					playAudio(artistName);
-					swapText(artistName);
-					reAnimate();
+					playAudio(nameNoSpaces);
+					lazyLoad(name, nameNoSpaces);
+					swapDiv(nameNoSpaces);
 				},
 				false
 			);
-			console.log("created event listener for " + artistName + "icon");
+			console.log("created event listener for " + nameNoSpaces + "icon");
 		})();
 	}
 
@@ -30,16 +26,36 @@
 		audio.play();
 	}
 
-	function swapText(artistName) {
-		nameWithSpace = artistName.replace(/([A-Z])/g, " $1").trim();
-		console.log("swapping text to " + nameWithSpace);
-		document.querySelector("#artistNameHeader").innerHTML = nameWithSpace;
+	var oldWrapper = "";
+	function swapDiv(artistName) {
+		console.log("swapping text to " + artistName);
+		var newWrapper = document.querySelector("#" + artistName);
+		if (newWrapper !== oldWrapper) {
+			if (oldWrapper !== "") {
+				oldWrapper.style.animationDelay = "0s";
+				oldWrapper.classList.remove("slideinAnimation");
+				newWrapper.style.animationDelay = "0.6s";
+				oldWrapper.classList.add("wipeOutAnimation");
+			}
+			newWrapper.classList.remove("wipeOutAnimation");
+			newWrapper.classList.add("slideinAnimation");
+			oldWrapper = newWrapper;
+		}
+		if (window.innerWidth < 720) {
+			moveGrid(artistName);
+		}
 	}
 
-	function reAnimate() {
-		infoWrapper = document.querySelector(".infoWrapper");
-		infoWrapper.classList.remove("slideinAnimation");
-		infoWrapper.offsetWidth;
-		infoWrapper.classList.add("slideinAnimation");
+	function moveGrid(artistName) {
+		grid = document.querySelector("aside");
+		var wrapper = document.querySelector("#" + artistName);
+		console.log(wrapper.clientHeight);
+		grid.style.top =
+			wrapper.clientHeight + wrapper.getBoundingClientRect().top + "px";
+	}
+	function lazyLoad(name, noSpaces) {
+		var img = document.querySelector("#" + noSpaces + " div img");
+		img.setAttribute("src", "images/artistPics/" + noSpaces + ".jpg");
+		img.setAttribute("alt", name);
 	}
 })();

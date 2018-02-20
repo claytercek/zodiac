@@ -145,20 +145,36 @@ h2 {
 }
 .slideinAnimation {
 	display: initial !important;
-	max-height: 9vw;
-	animation: 2s slidein ease forwards;
+	max-height: 0vw;
+	/* width:0; */
+	animation: 2s slidein ease  forwards;
 }
 @keyframes slidein {
 	0% {
 		width: 0;
+		max-height: 8.6vw;
 	}
 	50% {
-		max-height: 9vw;
+		max-height: 8.6vw;
 		width: 100%;
 	}
 	100% {
 		max-height: 80vh;
 		width: 100%;
+	}
+}
+
+.wipeOutAnimation {
+	display: initial !important;
+	max-height: 80vh;
+	animation: .6s wipeOut ease forwards;
+}
+@keyframes wipeOut {
+	0% {
+		width:100%;
+	}
+	100% {
+		width:0;
 	}
 }
 
@@ -174,7 +190,7 @@ p {
 	margin: 0;
 	font-family: Heebo, sans-serif;
 	font-weight: 300;
-	font-size: 2vw;
+	font-size: 1.7vw;
 	margin-top: 0.5rem;
 }
 
@@ -199,7 +215,7 @@ h3 {
 		font-size: 3.3rem;
 	}
 	p {
-		font-size: 1.31rem;
+		font-size: 1rem;
 	}
 	aside {
 		width: 235px;
@@ -211,10 +227,12 @@ h3 {
 		padding: 1.78rem 1.78rem 1.78rem 7.478rem;
 	}
 	.slideinAnimation {
-		max-height: 6.28rem;
+		display: initial !important;
+		max-height: 0vw;
 	}
 	@keyframes slidein {
 		0% {
+			max-height: 6.28rem;
 			width: 0;
 		}
 		50% {
@@ -297,6 +315,7 @@ input[type="date"] {
 	}
 	.slideinAnimation {
 		max-height: unset;
+		width:0;
 		animation: 1s slidein ease forwards;
 	}
 	body {
@@ -308,15 +327,12 @@ input[type="date"] {
 	}
 	.centerwrapper {
 		width: 100%;
-		height: calc(42vh + 150vw + 3rem);
-		min-height: calc(400px + 126vw + 3rem);
-		max-height: calc(120vw + 650px + 3rem);
 	}
 
 	aside {
+		transition: top 1s ease;
 		position: absolute;
-		top: initial;
-		bottom: 0px !important;
+		top: calc(20vh + 25vw);
 		min-height: 0;
 		min-width: 0;
 		margin: 0 auto;
@@ -325,11 +341,10 @@ input[type="date"] {
 		max-width: none;
 		height: 106.6666vw;
 		max-height: none;
-		margin-bottom: 3rem;
 	}
 	.artistInfo {
 		padding: 2.7vw;
-		width: 87.3vw;
+		width: 90vw;
 	}
 	main {
 		top: 5vh;
