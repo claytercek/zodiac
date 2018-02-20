@@ -21,10 +21,10 @@
 	}
 
 	var audio = new Audio(); //establish audio variable
-	function submit(artistName1) {
-		console.log("calling audio for " + artistName1);
+	function submit(artistName) {
+		console.log("calling audio for " + artistName);
 		audio.pause(); //incase audio is already playing
-		audio = new Audio("audio/" + artistName1 + ".mp3");
+		audio = new Audio("audio/" + artistName + ".mp3");
 		audio.play();
 	}
 })();
