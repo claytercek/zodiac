@@ -12,7 +12,9 @@
 			artistIconList[i].addEventListener(
 				"click",
 				function() {
-					selectArtist(artistName);
+					playAudio(artistName);
+					swapText(artistName);
+					reAnimate();
 				},
 				false
 			);
@@ -21,10 +23,23 @@
 	}
 
 	var audio = new Audio(); //establish audio variable
-	function selectArtist(artistName) {
+	function playAudio(artistName) {
 		console.log("calling audio for " + artistName);
 		audio.pause(); //incase audio is already playing
 		audio = new Audio("audio/" + artistName + ".mp3");
 		audio.play();
+	}
+
+	function swapText(artistName) {
+		nameWithSpace = artistName.replace(/([A-Z])/g, " $1").trim();
+		console.log("swapping text to " + nameWithSpace);
+		document.querySelector("#artistNameHeader").innerHTML = nameWithSpace;
+	}
+
+	function reAnimate() {
+		infoWrapper = document.querySelector(".infoWrapper");
+		infoWrapper.classList.remove("slideinAnimation");
+		infoWrapper.offsetWidth;
+		infoWrapper.classList.add("slideinAnimation");
 	}
 })();

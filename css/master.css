@@ -52,7 +52,7 @@ aside {
 	background-color: #fe6263;
 	z-index: 2;
 	min-width: 174px;
-	min-height:522px;
+	min-height: 522px;
 	max-height: 85vh;
 	max-width: 28.333vh;
 }
@@ -106,7 +106,7 @@ main {
 	min-height: 400px;
 	width: 100%;
 	position: fixed;
-	top:0%;
+	top: 0%;
 	left: 25%;
 	background-color: #015896;
 }
@@ -130,11 +130,11 @@ h2 {
 .infoWrapper {
 	position: absolute;
 	width: 100%;
-	top:110%;
+	max-height: 0;
+	top: 110%;
 	left: 0;
-	overflow:hidden;
-	animation: 2s slidein ease forwards;
-	max-height: 9vw;
+	overflow: hidden;
+	display: none;
 }
 .artistInfo {
 	width: 72vw;
@@ -143,35 +143,44 @@ h2 {
 
 	/* height: fit-content; */
 }
-
+.slideinAnimation {
+	display: initial !important;
+	max-height: 9vw;
+	animation: 2s slidein ease forwards;
+}
 @keyframes slidein {
-	0% {width:0;}
-	50%{max-height: 9vw; width:100%;}
-	100%{max-height:80vh}
+	0% {
+		width: 0;
+	}
+	50% {
+		max-height: 9vw;
+		width: 100%;
+	}
+	100% {
+		max-height: 80vh;
+		width: 100%;
+	}
 }
 
-
 .artistInfo img {
-	margin-top:.5rem;
-	width:100% ;
+	margin-top: 0.5rem;
+	width: 100%;
 }
 
 .artistInfo p a {
-	color:#1d1d1d;
-
+	color: #1d1d1d;
 }
 p {
 	margin: 0;
 	font-family: Heebo, sans-serif;
 	font-weight: 300;
 	font-size: 2vw;
-	margin-top: .5rem;
+	margin-top: 0.5rem;
 }
-
 
 h3 {
 	margin: 0;
-	margin-top: .5rem;
+	margin-top: 0.5rem;
 	font-family: Heebo, sans-serif;
 	text-transform: uppercase;
 	font-weight: 300;
@@ -180,7 +189,6 @@ h3 {
 }
 
 @media screen and (min-width: 1117px) {
-
 	h1 {
 		font-size: 4.5rem;
 	}
@@ -199,17 +207,23 @@ h3 {
 	}
 
 	.artistInfo {
-		width:50.265rem;
+		width: 50.265rem;
 		padding: 1.78rem 1.78rem 1.78rem 7.478rem;
-
 	}
-	.infoWrapper {
+	.slideinAnimation {
 		max-height: 6.28rem;
 	}
 	@keyframes slidein {
-		0% {width:0;}
-		50%{max-height: 6.28rem; width:100%;}
-		100%{max-height:80vh}
+		0% {
+			width: 0;
+		}
+		50% {
+			max-height: 6.28rem;
+			width: 100%;
+		}
+		100% {
+			max-height: 80vh;
+		}
 	}
 }
 
@@ -274,11 +288,15 @@ input[type="date"] {
 
 @media screen and (max-width: 720px) {
 	@keyframes slidein {
-		0% {width:0;}
-		100%{width:100%;}
+		0% {
+			width: 0;
+		}
+		100% {
+			width: 100%;
+		}
 	}
-	.infoWrapper {
-		max-height:unset;
+	.slideinAnimation {
+		max-height: unset;
 		animation: 1s slidein ease forwards;
 	}
 	body {
@@ -311,17 +329,15 @@ input[type="date"] {
 	}
 	.artistInfo {
 		padding: 2.7vw;
-		width:87.3vw;
+		width: 87.3vw;
 	}
 	main {
-		top:5vh;
+		top: 5vh;
 		width: 90%;
 		left: 5%;
 		max-width: 100%;
 		padding: 3%;
 	}
-
-
 
 	.icons img {
 		width: 26.5%;
@@ -343,7 +359,7 @@ input[type="date"] {
 		font-size: 3vw;
 	}
 	h2 {
-		font-size:1.5rem;
+		font-size: 1.5rem;
 	}
 	form {
 		margin-top: 0.5rem;
