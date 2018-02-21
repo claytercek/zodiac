@@ -55,6 +55,7 @@ aside {
 	min-height: 522px;
 	max-height: 85vh;
 	max-width: 28.333vh;
+	margin-top: 0;
 }
 
 main {
@@ -147,7 +148,7 @@ h2 {
 	display: initial !important;
 	max-height: 0vw;
 	/* width:0; */
-	animation: 2s slidein ease  forwards;
+	animation: 2s slidein ease forwards;
 }
 @keyframes slidein {
 	0% {
@@ -167,14 +168,14 @@ h2 {
 .wipeOutAnimation {
 	display: initial !important;
 	max-height: 80vh;
-	animation: .6s wipeOut ease forwards;
+	animation: 0.6s wipeOut ease forwards;
 }
 @keyframes wipeOut {
 	0% {
-		width:100%;
+		width: 100%;
 	}
 	100% {
-		width:0;
+		width: 0;
 	}
 }
 
@@ -315,7 +316,7 @@ input[type="date"] {
 	}
 	.slideinAnimation {
 		max-height: unset;
-		width:0;
+		width: 0;
 		animation: 1s slidein ease forwards;
 	}
 	body {
@@ -330,7 +331,7 @@ input[type="date"] {
 	}
 
 	aside {
-		transition: top 1s ease;
+		transition: margin-top 0.5s ease;
 		position: absolute;
 		top: calc(20vh + 25vw);
 		min-height: 0;
