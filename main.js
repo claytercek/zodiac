@@ -42,17 +42,10 @@
 			oldWrapper = newWrapper;
 		}
 		if (window.innerWidth < 720) {
-			moveGrid(artistName);
+			moveIconGrid(artistName);
 		}
 	}
 
-	function moveGrid(artistName) {
-		grid = document.querySelector("aside");
-		var wrapper = document.querySelector("#" + artistName);
-		console.log(wrapper.clientHeight);
-		grid.style.top =
-			wrapper.clientHeight + wrapper.getBoundingClientRect().top + "px";
-	}
 	function lazyLoad(name, noSpaces) {
 		var img = document.querySelector("#" + noSpaces + " div img");
 		img.setAttribute("src", "images/artistPics/" + noSpaces + ".jpg");
