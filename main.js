@@ -1,26 +1,23 @@
-(function() {
+{
 	var artistIconList = document.querySelectorAll(".artistIcon");
 
-	for (i = 0; i < 12; i++) {
+	for (const icon of artistIconList) {
 		(function() {
-			var name = artistIconList[i].getAttribute("alt");
+			var name = icon.getAttribute("alt");
 			var nameNoSpaces = name.replace(/ /g, "");
-			artistIconList[i].addEventListener(
+			icon.addEventListener(
 				"click",
 				function() {
 					playAudio(nameNoSpaces);
-					lazyLoad(name, nameNoSpaces);
 					swapDiv(nameNoSpaces);
 				},
 				false
 			);
-			console.log("created event listener for " + nameNoSpaces + "icon");
 		})();
 	}
 
 	var audio = new Audio(); //establish audio variable
 	function playAudio(artistName) {
-		console.log("calling audio for " + artistName);
 		audio.pause(); //incase audio is already playing
 		audio = new Audio("audio/" + artistName + ".mp3");
 		audio.play();
@@ -28,7 +25,6 @@
 
 	var oldWrapper = "";
 	function swapDiv(artistName) {
-		console.log("swapping text to " + artistName);
 		var newWrapper = document.querySelector("#" + artistName);
 		if (newWrapper !== oldWrapper) {
 			if (oldWrapper !== "") {
@@ -45,10 +41,8 @@
 			moveIconGrid(artistName);
 		}
 	}
-
-	function lazyLoad(name, noSpaces) {
-		var img = document.querySelector("#" + noSpaces + " div img");
-		img.setAttribute("src", "images/artistPics/" + noSpaces + ".jpg");
-		img.setAttribute("alt", name);
+	grid = document.querySelector("aside");
+	function moveIconGrid() {
+		return;
 	}
-})();
+}

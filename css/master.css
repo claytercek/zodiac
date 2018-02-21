@@ -56,6 +56,7 @@ aside {
 	min-height: 522px;
 	max-height: 85vh;
 	max-width: 28.333vh;
+	margin-top: 0;
 }
 
 main {
@@ -207,7 +208,7 @@ input[type="date"] {
 .slideinAnimation {
 	max-height: 0vw;
 	/* width:0; */
-	animation: 2s slidein ease  forwards;
+	animation: 2s slidein ease forwards;
 }
 @keyframes slidein {
 	0% {
@@ -226,14 +227,14 @@ input[type="date"] {
 
 .wipeOutAnimation { 
 	max-height: 80vh;
-	animation: .6s wipeOut ease forwards;
+	animation: 0.6s wipeOut ease forwards;
 }
 @keyframes wipeOut {
 	0% {
-		width:100%;
+		width: 100%;
 	}
 	100% {
-		width:0;
+		width: 0;
 	}
 }
 
