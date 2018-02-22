@@ -7,6 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/master.css">
+    <script>
+        function submit() {
+            pass
+        }
+    </script>
     <title>Zodiac</title>
 </head>
 
@@ -18,10 +23,10 @@
                 <h3>Input your name and birthday to hear your artist</h3>
 
                 <form action="/action_page.php">
-                    <input type="text" placeholder="First Name" autocomplete='given-name' name="fname">
-                    <input type="text" placeholder="Last Name" autocomplete='family-name' name="lname">
-                    <input type="text" placeholder="mm/dd/yyyy" autocomplete='bday' name="date">
-                    <input type="button" value="Submit">
+                    <input id="fname" type="text" placeholder="First Name" autocomplete='given-name' name="fname">
+                    <input id="lname" type="text" placeholder="Last Name" autocomplete='family-name' name="lname">
+                    <input id="date" type="date" placeholder="mm/dd/yyyy" autocomplete='bday' name="date">
+                    <input id="submit" type="button" value="Submit" onClick="javascript: submitForm()">
                 </form>
             </div>
             <div class="infoWrapper drop-shadow" id="GerryMulligan">

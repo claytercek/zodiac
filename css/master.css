@@ -103,6 +103,13 @@ main {
 	bottom: 4px;
 	opacity: 0.9;
 }
+.warning {
+	font-weight: 500;
+	display: none;
+	text-align: center;
+	color: rgb(243, 77, 77);
+}
+
 
 .blue {
 	z-index: -2;
@@ -152,10 +159,15 @@ input {
 	width: calc(25% - 0.375rem);
 	height: 2rem;
 	display: block;
-	text-align: center !important;
+	padding-left:.5rem;
+	/* text-align: center !important; */
 }
 
-
+input:invalid {
+	background-color: rgba(255, 45, 45, 0.1);
+	border-color: rgb(243, 77, 77);
+	border-width: 2px;
+}
 input:focus {
 	border: 2px solid #1d1d1d;
 }
@@ -232,9 +244,14 @@ input[type="date"] {
 @keyframes wipeOut {
 	0% {
 		width: 100%;
+		max-height: 100vh;
+	}
+	99% {
+		max-height: 100vh;
 	}
 	100% {
 		width: 0;
+		max-height: 0;
 	}
 }
 
@@ -338,7 +355,7 @@ h3 {
 	}
 	.slideinAnimation {
 		/* width:0; */
-		animation: 1.5s slidein ease forwards;
+		animation: 1.5 s slidein ease forwards;
 	}
 	body {
 		height: 100%;
@@ -349,6 +366,7 @@ h3 {
 	}
 	.centerwrapper {
 		width: 100%;
+		height: fit-content;
 	}
 
 	aside {
