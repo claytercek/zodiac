@@ -141,6 +141,8 @@ form {
 	justify-content: space-between;
 }
 input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
 	box-sizing: border-box;
 	border: 1px solid #1d1d1d;
 	border-radius: 2px;
