@@ -103,12 +103,6 @@ main {
 	bottom: 4px;
 	opacity: 0.9;
 }
-.warning {
-	font-weight: 500;
-	display: none;
-	text-align: center;
-	color: rgb(243, 77, 77);
-}
 
 
 .blue {
@@ -163,11 +157,6 @@ input {
 	/* text-align: center !important; */
 }
 
-input:invalid {
-	background-color: rgba(255, 45, 45, 0.1);
-	border-color: rgb(243, 77, 77);
-	border-width: 2px;
-}
 input:focus {
 	border: 2px solid #1d1d1d;
 }
