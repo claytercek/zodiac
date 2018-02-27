@@ -156,7 +156,12 @@ input {
 	padding-left:.5rem;
 	/* text-align: center !important; */
 }
-
+.warning {
+	text-align: center;
+	color: #fe6263;
+	font-weight: 500;
+	display:none;
+}
 input:focus {
 	border: 2px solid #1d1d1d;
 }

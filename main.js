@@ -9,6 +9,7 @@
 			function() {
 				playAudio(nameNoSpaces);
 				swapDiv(nameNoSpaces);
+				insertName(nameNoSpaces);
 			},
 			false
 		);
@@ -25,6 +26,8 @@
 
 		whichDayOfMonth = date[2];
 		whichMonth = date[1];
+
+		AstroSign = "";
 
 		if ((whichMonth == 12 && whichDayOfMonth >= 22) || (whichMonth == 1 && whichDayOfMonth <= 19)) {
 			AstroSign = "Cap";
@@ -51,7 +54,13 @@
 		} else if ((whichMonth == 1 && whichDayOfMonth >= 20) || (whichMonth == 2 && whichDayOfMonth <= 18)) {
 			AstroSign = "Aqu";
 		}
-		var dictionary = {
+		if (AstroSign === "") {
+			warning.style.display = "block";
+		} else {
+			warning.style.display = "none";
+		}
+
+		var astroSignToArtist = {
 			Cap: "GerryMulligan",
 			Sag: "TheloniousMonk",
 			Sco: "CharlieParker",
@@ -65,8 +74,26 @@
 			Pis: "CountBasie",
 			Aqu: "BillieHoliday"
 		};
-		playAudio(dictionary[AstroSign]);
-		swapDiv(dictionary[AstroSign]);
+		playAudio(astroSignToArtist[AstroSign]);
+		swapDiv(astroSignToArtist[AstroSign]);
+		insertName(astroSignToArtist[AstroSign], fname, lname);
+	}
+
+	function insertName(artistname, fname = form.elements[0].value, lname = form.elements[1].value) {
+		if (fname == "") {
+			phrase = "";
+		} else {
+			if (lname == "") {
+				phrase = fname + ", ";
+			} else {
+				phrase = fname + " " + lname + ", ";
+			}
+		}
+		var desc = document.querySelector("#" + artistname + " .desc");
+		text = desc.innerHTML;
+		combined = phrase + text;
+		combined = combined.charAt(0).toUpperCase() + combined.slice(1);
+		desc.innerHTML = combined;
 	}
 
 	var audio = new Audio(); //establish audio variable
