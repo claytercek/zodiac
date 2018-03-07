@@ -7,11 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/master.css">
-    <script>
-        function submit() {
-            pass
-        }
-    </script>
     <title>Zodiac</title>
 </head>
 
@@ -19,16 +14,19 @@
     <div class="centerwrapper">
         <main>
             <div class="headerContent drop-shadow">
+                <a class="help" href="#">
+                    <i class="far fa-question-circle fa-lg"></i>
+                </a>
                 <h1>Jazz musicians</h1>
                 <h3>Input your name and birthday to hear your artist</h3>
 
-                <form action="/action_page.php">
+                <form action="index.html" method="post" name="myForm" id="myForm">
                     <input id="fname" type="text" placeholder="First Name" autocomplete='given-name' name="fname">
                     <input id="lname" type="text" placeholder="Last Name" autocomplete='family-name' name="lname">
                     <input id="date" type="date" placeholder="mm/dd/yyyy" autocomplete='bday' name="date">
-                    <input id="submit" type="button" value="Submit" onClick="javascript: submitForm()">
+                    <input id="submit" type="submit" value="Submit">
                 </form>
-                <p class="warning">please enter date of birth</p>
+                <p class="warning">please enter valid date of birth: mm/dd/yyyy</p>
             </div>
             <div class="infoWrapper drop-shadow" id="GerryMulligan">
                 <div class="artistInfo">
@@ -38,12 +36,7 @@
                         <a href="https://www.youtube.com/watch?v=T7FOmjiibgk">Walkin' Shoes by Gerry Mulligan Quartet</a>
                     </p>
                     <img src="images/artistPics/GerryMulligan.jpg" alt="Gerry Mulligan">
-                    <p class="desc">You are Gerald Joseph Mulligan, born in 1972. He was an American jazz saxophonist, clarinetist, composer
-                        and arranger. Though Mulligan is primarily known as one of the leading jazz baritone saxophonists
-                        – playing the instrument with a light and airy tone in the era of cool jazz – he was also a significant
-                        arranger, working with Claude Thornhill, Miles Davis, Stan Kenton, and others. Mulligan's pianoless
-                        quartet of the early 1950s with trumpeter Chet Baker is still regarded as one of the best cool jazz
-                        groups.
+                    <p class="desc">You are Gerald Joseph Mulligan, born in 1972. He was an American jazz saxophonist, clarinetist, composer and arranger. Though Mulligan is primarily known as one of the leading jazz baritone saxophonists – playing the instrument with a light and airy tone in the era of cool jazz – he was also a significant arranger, working with Claude Thornhill, Miles Davis, Stan Kenton, and others. Mulligan's pianoless quartet of the early 1950s with trumpeter Chet Baker is still regarded as one of the best cool jazz groups.
                     </p>
 
                 </div>
@@ -56,9 +49,7 @@
                         <a href="https://youtu.be/icFRHJ9VZaw">Monk's Dream by Thelonious Monk</a>
                     </p>
                     <img src="images/artistPics/TheloniousMonk.jpg" alt="Thelonious Monk">
-                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium?
-                        Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos
-                        eaque?
+                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium? Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos eaque?
                     </p>
 
                 </div>
@@ -71,9 +62,7 @@
                         <a href="https://youtu.be/yXK0pZx92MU">Confirmation by Charlie Parker</a>
                     </p>
                     <img src="images/artistPics/CharlieParker.jpg" alt="Charlie Parker">
-                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium?
-                        Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos
-                        eaque?
+                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium? Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos eaque?
                     </p>
 
                 </div>
@@ -86,9 +75,7 @@
                         <a href="https://youtu.be/ylXk1LBvIqU">So What by Miles Davis</a>
                     </p>
                     <img src="images/artistPics/MilesDavis.jpg" alt="Miles Davis">
-                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium?
-                        Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos
-                        eaque?
+                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium? Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos eaque?
                     </p>
 
                 </div>
@@ -101,9 +88,7 @@
                         <a href="https://www.youtube.com/watch?v=D6mFGy4g_n8">Take the "A" Train by Duke Ellingtion</a>
                     </p>
                     <img src="images/artistPics/DukeEllington.jpg" alt="Duke Ellington">
-                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium?
-                        Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos
-                        eaque?
+                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium? Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos eaque?
                     </p>
 
                 </div>
@@ -116,9 +101,7 @@
                         <a href="https://youtu.be/sCQfTNOC5aE">In a Sentimental Mood by Duke and John Coltrane</a>
                     </p>
                     <img src="images/artistPics/JohnColtrane.jpg" alt="John Coltrane">
-                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium?
-                        Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos
-                        eaque?
+                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium? Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos eaque?
                     </p>
 
                 </div>
@@ -131,9 +114,7 @@
                         <a href="https://youtu.be/a2LFVWBmoiw">My Foolish Heart by Bill Evans</a>
                     </p>
                     <img src="images/artistPics/BillEvans.jpg" alt="Bill Evans">
-                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium?
-                        Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos
-                        eaque?
+                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium? Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos eaque?
                     </p>
 
                 </div>
@@ -146,9 +127,7 @@
                         <a href="https://youtu.be/vP02sgYrHsw">Everytime We Say Goodbye by Chet Baker</a>
                     </p>
                     <img src="images/artistPics/ChetBaker.jpg" alt="Chet Baker">
-                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium?
-                        Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos
-                        eaque?
+                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium? Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos eaque?
                     </p>
 
                 </div>
@@ -161,9 +140,7 @@
                         <a href="https://www.youtube.com/watch?v=MmwsQ_dHrFM">Work Song by Cannonball Adderley Quartet</a>
                     </p>
                     <img src="images/artistPics/CannonballAdderley.jpg" alt="Cannonball Adderley">
-                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium?
-                        Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos
-                        eaque?
+                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium? Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos eaque?
                     </p>
 
                 </div>
@@ -176,9 +153,7 @@
                         <a href="https://youtu.be/kmfeKUNDDYs">Hello Dolly by Louis Armstrong</a>
                     </p>
                     <img src="images/artistPics/LouisArmstrong.jpg" alt="Louis Armstrong">
-                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium?
-                        Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos
-                        eaque?
+                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium? Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos eaque?
                     </p>
 
                 </div>
@@ -191,9 +166,7 @@
                         <a href="https://www.youtube.com/watch?v=rEUBwiezayE">The Kid from Red Bank by Count Basie Orchestra</a>
                     </p>
                     <img src="images/artistPics/CountBasie.jpg" alt="Count Basie">
-                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium?
-                        Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos
-                        eaque?
+                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium? Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos eaque?
                     </p>
 
                 </div>
@@ -206,9 +179,16 @@
                         <a href="https://www.youtube.com/watch?v=4P0hG3sD0-E">All of Me by Billie Holiday</a>
                     </p>
                     <img src="images/artistPics/BillieHoliday.jpg" alt="Billie Holiday">
-                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium?
-                        Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos
-                        eaque?
+                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium? Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos eaque?
+                    </p>
+
+                </div>
+            </div>
+            <div class="infoWrapper drop-shadow" id="help">
+                <div class="artistInfo">
+                    <h2>Help:</h2>
+
+                    <p class="desc">lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nihil rem quidem debitis praesentium? Nemo, tenetur placeat veritatis ipsum corrupti ratione minus ea debitis optio eius enim, hic quos eaque?
                     </p>
 
                 </div>
@@ -235,6 +215,7 @@
     <div class="blue drop-shadow"></div>
     <div class="purple drop-shadow"></div>
     <script src="main.js"></script>
+    <script src="scripts/fontawesome-all.js"></script>
 </body>
 
 </html>

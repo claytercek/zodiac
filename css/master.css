@@ -8,24 +8,21 @@ $grey: #1d1d1d;
 
 @font-face {
 	font-family: "Heebo";
-	src: url("../fonts/Heebo-Medium.woff2") format("woff2"),
-		url("../fonts/Heebo-Medium.woff") format("woff");
+	src: url("../fonts/Heebo-Medium.woff2") format("woff2"), url("../fonts/Heebo-Medium.woff") format("woff");
 	font-weight: 500;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Heebo";
-	src: url("../fonts/Heebo-Light.woff2") format("woff2"),
-		url("../fonts/Heebo-Light.woff") format("woff");
+	src: url("../fonts/Heebo-Light.woff2") format("woff2"), url("../fonts/Heebo-Light.woff") format("woff");
 	font-weight: 300;
 	font-style: normal;
 }
 
 @font-face {
 	font-family: "Heebo";
-	src: url("../fonts/Heebo-Black.woff2") format("woff2"),
-		url("../fonts/Heebo-Black.woff") format("woff");
+	src: url("../fonts/Heebo-Black.woff2") format("woff2"), url("../fonts/Heebo-Black.woff") format("woff");
 	font-weight: 900;
 	font-style: normal;
 }
@@ -62,13 +59,12 @@ aside {
 main {
 	color: #1d1d1d;
 	position: absolute;
-	
+
 	width: 85%;
 	top: 7.5vh;
 	right: 0;
 }
 .headerContent {
-	
 	padding: 3%;
 	padding-left: 15%;
 	background-color: #fbf678;
@@ -104,7 +100,6 @@ main {
 	opacity: 0.9;
 }
 
-
 .blue {
 	z-index: -2;
 	float: left;
@@ -134,7 +129,6 @@ h2 {
 	font-size: 5vw;
 }
 
-
 form {
 	margin: 1rem 0 0 0;
 	display: flex;
@@ -153,14 +147,14 @@ input {
 	width: calc(25% - 0.375rem);
 	height: 2rem;
 	display: block;
-	padding-left:.5rem;
+	padding-left: 0.5rem;
 	/* text-align: center !important; */
 }
 .warning {
 	text-align: center;
 	color: #fe6263;
 	font-weight: 500;
-	display:none;
+	display: none;
 }
 input:focus {
 	border: 2px solid #1d1d1d;
@@ -171,23 +165,20 @@ input::placeholder {
 	color: #1d1d1d;
 	opacity: 0.5;
 }
-input[type="button"] {
+input[type="submit"] {
 	cursor: pointer;
 }
-input[type="button"]:focus {
+input[type="submit"]:focus {
 	border: 1px solid #1d1d1d;
 }
-input[type="button"]:hover {
+input[type="submit"]:hover {
 	border: 2px solid #1d1d1d;
 }
-input[type="button"]:active {
+input[type="submit"]:active {
 	border: 2px solid #1d1d1d;
 	background-color: #1d1d1d;
+	color: #fbf678;
 }
-/* 
-input[type="date"] {
-	text-align: -moz-center;
-} */
 .centerwrapper {
 	width: 85vw;
 	height: 100vh;
@@ -231,7 +222,7 @@ input[type="date"] {
 	}
 }
 
-.wipeOutAnimation { 
+.wipeOutAnimation {
 	max-height: 80vh;
 	animation: 0.6s wipeOut ease forwards;
 }
@@ -272,6 +263,14 @@ h3 {
 	font-weight: 300;
 	font-size: 2vw;
 	text-align: center;
+}
+
+a.help {
+	position: absolute !important;
+	right: 0.5rem;
+	top: 0.5rem;
+	text-decoration: none;
+	color: black;
 }
 
 @media screen and (min-width: 1117px) {
@@ -315,32 +314,30 @@ h3 {
 	}
 }
 
-
 @media screen and (max-width: 720px) {
 	@keyframes slidein {
 		0% {
-			margin-top:1rem;
+			margin-top: 1rem;
 			max-height: 0;
-			width:100%;
+			width: 100%;
 		}
 		100% {
-			margin-top:1rem;
+			margin-top: 1rem;
 			width: 100%;
 			max-height: 100vh;
 		}
 	}
 	@keyframes wipeOut {
 		0% {
-			margin-top:1rem;
-			width:100%;
+			margin-top: 1rem;
+			width: 100%;
 			max-height: 100vh;
 		}
-		99% {	
-			margin-top:1rem;
+		99% {
+			margin-top: 1rem;
 		}
 		100% {
-			
-			width:100%;
+			width: 100%;
 			max-height: 0;
 		}
 	}
@@ -367,7 +364,7 @@ h3 {
 		min-height: 0;
 		min-width: 0;
 		margin: 1rem auto 0 auto;
-		top:0;
+		top: 0;
 		width: 80vw !important;
 		max-width: none;
 		height: 106.6666vw;
@@ -377,8 +374,8 @@ h3 {
 	.infoWrapper {
 		overflow: hidden;
 		position: relative;
-		top:unset;
-		width:0;
+		top: unset;
+		width: 0;
 	}
 	.artistInfo {
 		position: static;
@@ -387,12 +384,11 @@ h3 {
 	}
 	main {
 		position: relative;
-		top:initial;
+		top: initial;
 		width: 90%;
 		margin: auto;
 		margin-top: 1rem;
 		max-width: 100%;
-		
 	}
 	.headerContent {
 		padding: 2.7vw;
@@ -425,12 +421,13 @@ h3 {
 		margin-bottom: 0;
 	}
 	input {
-		float:none;
+		float: none;
 		font-size: 1rem;
 		height: 2rem;
 		width: calc(50% - 0.25rem);
 		margin-left: 0;
 		margin-bottom: 0.5rem;
+		text-align: left !important;
 	}
 	input:first-child,
 	input:nth-child(3) {

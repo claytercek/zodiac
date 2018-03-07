@@ -9,25 +9,43 @@
 			function() {
 				playAudio(nameNoSpaces);
 				swapDiv(nameNoSpaces);
-				insertName(nameNoSpaces);
 			},
 			false
 		);
 	}
 
-	var form = document.querySelector("form");
+	var helpLink = document.querySelector(".help");
+	helpLink.addEventListener(
+		"click",
+		function() {
+			swapDiv("help");
+		},
+		false
+	);
+
+	var form = document.forms["myForm"];
 	var warning = document.querySelector(".warning");
-	function submitForm() {
-		var fname = form.elements[0].value;
-		var lname = form.elements[1].value;
-		var date = form.elements[2].value;
-		console.log(date);
-		date = date.split("-");
+	form.addEventListener("submit", handleFormSubmit, false);
+	function handleFormSubmit(event) {
+		event.preventDefault();
+		var fname = document.getElementById("fname").value;
+		var lname = document.getElementById("lname").value;
+		var dateInput = document.getElementById("date");
 
-		whichDayOfMonth = date[2];
-		whichMonth = date[1];
+		date = new Date(dateInput.value);
 
-		AstroSign = "";
+		if (isNaN(date)) {
+			dateInput.focus();
+			dateInput.value = "";
+			warning.style.display = "block";
+		} else {
+			warning.style.display = "none";
+		}
+
+		whichDayOfMonth = date.getUTCDate();
+		whichMonth = date.getUTCMonth() + 1;
+
+		var AstroSign = "";
 
 		if ((whichMonth == 12 && whichDayOfMonth >= 22) || (whichMonth == 1 && whichDayOfMonth <= 19)) {
 			AstroSign = "Cap";
@@ -78,22 +96,30 @@
 		swapDiv(astroSignToArtist[AstroSign]);
 		insertName(astroSignToArtist[AstroSign], fname, lname);
 	}
-
+	var olddesc = null;
+	var unchangeddesc = "";
 	function insertName(artistname, fname = form.elements[0].value, lname = form.elements[1].value) {
+		if (unchangeddesc != "") {
+			olddesc.innerHTML = unchangeddesc;
+			console.log("fixing old description");
+		}
+
 		if (fname == "") {
 			phrase = "";
 		} else {
 			if (lname == "") {
-				phrase = fname + ", ";
+				phrase = "<b>" + fname + "</b>, ";
 			} else {
-				phrase = fname + " " + lname + ", ";
+				phrase = "<b>" + fname + " " + lname + "</b>, ";
 			}
 		}
 		var desc = document.querySelector("#" + artistname + " .desc");
+		unchangeddesc = desc.innerHTML;
 		text = desc.innerHTML;
 		combined = phrase + text;
 		combined = combined.charAt(0).toUpperCase() + combined.slice(1);
 		desc.innerHTML = combined;
+		olddesc = desc;
 	}
 
 	var audio = new Audio(); //establish audio variable
