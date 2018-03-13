@@ -315,6 +315,11 @@ a.help {
 }
 
 @media screen and (max-width: 720px) {
+	a.help {
+		font-size: 80%;
+		top: 0.25rem;
+		right: 0.25rem;
+	}
 	@keyframes slidein {
 		0% {
 			margin-top: 1rem;

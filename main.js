@@ -25,7 +25,9 @@
 
 	var form = document.forms["myForm"];
 	var warning = document.querySelector(".warning");
+
 	form.addEventListener("submit", handleFormSubmit, false);
+
 	function handleFormSubmit(event) {
 		event.preventDefault();
 		var fname = document.getElementById("fname").value;
@@ -34,10 +36,11 @@
 
 		date = new Date(dateInput.value);
 
-		if (isNaN(date)) {
+		if (isNaN(date) || !validateDate(dateInput.value)) {
 			dateInput.focus();
 			dateInput.value = "";
 			warning.style.display = "block";
+			return;
 		} else {
 			warning.style.display = "none";
 		}
@@ -80,28 +83,54 @@
 
 		var astroSignToArtist = {
 			Cap: "GerryMulligan",
-			Sag: "TheloniousMonk",
-			Sco: "CharlieParker",
-			Lib: "MilesDavis",
-			Vir: "DukeEllington",
-			Leo: "JohnColtrane",
+			Aqu: "TheloniousMonk",
+			Pis: "CharlieParker",
+			Ari: "MilesDavis",
+			Tau: "DukeEllington",
+			Gem: "JohnColtrane",
 			Can: "BillEvans",
-			Gem: "ChetBaker",
-			Tau: "CannonballAdderley",
-			Ari: "LouisArmstrong",
-			Pis: "CountBasie",
-			Aqu: "BillieHoliday"
+			Leo: "ChetBaker",
+			Vir: "CannonballAdderley",
+			Lib: "LouisArmstrong",
+			Sco: "CountBasie",
+			Sag: "BillieHoliday"
 		};
-		playAudio(astroSignToArtist[AstroSign]);
+
 		swapDiv(astroSignToArtist[AstroSign]);
+		playAudio(astroSignToArtist[AstroSign]);
 		insertName(astroSignToArtist[AstroSign], fname, lname);
 	}
+
+	function validateDate(date) {
+		if (date.indexOf("/") > -1) {
+			//Safari and Edge return dates in "mm/dd/yyyy"
+			date = date.split("/");
+			year = date[2];
+			month = date[0] - 1;
+			day = date[1];
+		} else {
+			//Chrome and Firefox return dates in "yyyy-mm-dd" format
+			date.split("-");
+			year = date[0];
+			month = date[1] - 1;
+			day = date[2];
+		}
+
+		//max amount of days for each month (index 0 - 11)
+		var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+		// test for leap year
+		if ((!(year % 4) && year % 100) || !(year % 400)) {
+			daysInMonth[1] = 29;
+		}
+
+		return day <= daysInMonth[month];
+	}
+
 	var olddesc = null;
 	var unchangeddesc = "";
 	function insertName(artistname, fname = form.elements[0].value, lname = form.elements[1].value) {
 		if (unchangeddesc != "") {
 			olddesc.innerHTML = unchangeddesc;
-			console.log("fixing old description");
 		}
 
 		if (fname == "") {
