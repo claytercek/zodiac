@@ -1,8 +1,10 @@
 {
 	var artistIconList = document.querySelectorAll(".artistIcon");
 
+	//Add event listener to all of the artist images
 	for (const icon of artistIconList) {
 		let name = icon.getAttribute("alt");
+		//regex to remove space from name
 		let nameNoSpaces = name.replace(/ /g, "");
 		icon.addEventListener(
 			"click",
@@ -14,6 +16,7 @@
 		);
 	}
 
+	//add event listener to the help button
 	var helpLink = document.querySelector(".help");
 	helpLink.addEventListener(
 		"click",
@@ -23,6 +26,7 @@
 		false
 	);
 
+	//establish variables for form submit function
 	var form = document.forms["myForm"];
 	var warning = document.querySelector(".warning");
 
@@ -36,6 +40,7 @@
 
 		date = new Date(dateInput.value);
 
+		//Check to make sure date is possible, if not show warning
 		if (isNaN(date) || !validateDate(dateInput.value)) {
 			dateInput.focus();
 			dateInput.value = "";
@@ -81,6 +86,7 @@
 			warning.style.display = "none";
 		}
 
+		//Convert astro sign to artist name
 		var astroSignToArtist = {
 			Cap: "GerryMulligan",
 			Aqu: "TheloniousMonk",
@@ -126,13 +132,13 @@
 		return day <= daysInMonth[month];
 	}
 
+	//establish variables for insert name function
 	var olddesc = null;
 	var unchangeddesc = "";
 	function insertName(artistname, fname = form.elements[0].value, lname = form.elements[1].value) {
 		if (unchangeddesc != "") {
 			olddesc.innerHTML = unchangeddesc;
 		}
-
 		if (fname == "") {
 			phrase = "";
 		} else {
